@@ -6,8 +6,8 @@
     },
     "payload": {
       "iss": "https://vcn.certn.co/issuers/issuername1",
-      "sub": "did:key:ebfeb1f712ebc6f1c276e12ec21",
-      "aud": "did:web:relyingpartyname",
+      "sub": "did:key:z6MkpTHR8VNsBxYAAWHut2Geadd9jSwuBV8xRoAnwWsdvktH#z6MkpTHR8VNsBxYAAWHut2Geadd9jSwuBV8xRoAnwWsdvktH",
+      "aud": "did:web:vcn.certn.co:verifiers:relyingpartyname1",
       "exp": 1661990400,
       "nbf": 1659369600,
       "iat": 1659369600,
@@ -19,7 +19,7 @@
         "id": "https://vcn.certn.co/credentials/123e78ghg-e89b-12d3-a456-426614174000",
         "type": ["VerifiableCredential", "NaturalPerson"],
         "credentialSubject": {
-          "id": "did:key:ebfeb1f712ebc6f1c276e12ec21",
+          "id": "did:key:z6MkpTHR8VNsBxYAAWHut2Geadd9jSwuBV8xRoAnwWsdvktH#z6MkpTHR8VNsBxYAAWHut2Geadd9jSwuBV8xRoAnwWsdvktH",
           "type": "NaturalPerson",
           "familyName": "Palk",
           "givenName": "Chris",
