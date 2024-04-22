@@ -1,0 +1,33 @@
+{
+    "header": {
+      "alg": "RS256",
+      "typ": "JWT",
+      "kid": "https://vcn.certn.co/issuers/issuername1/keys/1"
+    },
+    "payload": {
+      "iss": "https://vcn.certn.co/issuers/issuername1",
+      "sub": "did:key:ebfeb1f712ebc6f1c276e12ec21",
+      "aud": "did:web:relyingpartyname",
+      "exp": 1661990400,
+      "nbf": 1659369600,
+      "iat": 1659369600,
+      "jti": "urn:uuid:unique-token-id",
+      "vc": {
+        "@context": [
+          "https://www.w3.org/ns/credentials/v2"
+        ],
+        "id": "https://vcn.certn.co/credentials/123e78ghg-e89b-12d3-a456-426614174000",
+        "type": ["VerifiableCredential", "NaturalPerson"],
+        "credentialSubject": {
+          "id": "did:key:ebfeb1f712ebc6f1c276e12ec21",
+          "type": "NaturalPerson",
+          "familyName": "Palk",
+          "givenName": "Chris",
+          "dateOfBirth": "1990-01-01",
+          "nationality": "GB"
+        }
+      }
+    },
+    "signature": "eyJhbGciOiJSUzI1NiIsImI2NCI6ZmFsc2U..truncated..sample..1J0O0u4W1f2GoRendFzA7jk9Yts2vrq9JGo6VPLHUVuoYBzZy2g"
+  }
+  
