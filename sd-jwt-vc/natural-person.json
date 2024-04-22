@@ -19,7 +19,7 @@
         "id": "https://vcn.certn.co/issuances/123e78ghg-e89b-12d3-a456-426614174000",
         "type": ["JsonSchema", "VerifiableCredential", "NaturalPerson"],
         "credentialSchema": [{
-          "id": "https://vcn.certn.co/credentials/123e78ghg-e89b-12d3-a456-426614174000",
+          "id": "https://vcn.certn.co/credentials/NaturalPerson",
           "type": "NaturalPerson"
           }
         ],
