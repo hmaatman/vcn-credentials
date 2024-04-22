@@ -16,13 +16,23 @@
         "@context": [
           "https://www.w3.org/ns/credentials/v2"
         ],
-        "id": "https://vcn.certn.co/credentials/123e78ghg-e89b-12d3-a456-426614174000",
-        "type": ["VerifiableCredential", "NaturalPerson"],
+        "id": "https://vcn.certn.co/issuances/123e78ghg-e89b-12d3-a456-426614174000",
+        "type": ["JsonSchema", "VerifiableCredential", "NaturalPerson"],
+        "credentialSchema": [{
+          "id": "https://vcn.certn.co/credentials/123e78ghg-e89b-12d3-a456-426614174000",
+          "type": "NaturalPerson"
+          }
+        ],
+        "issuer": {
+          "id": "did:web:vcn.certn.co:issuers:issuername1#key-1",
+          "issuingCountry": "GB"
+        },
+        "validFrom": "2024-04-22T17:27:17Z",
         "credentialSubject": {
           "id": "did:key:z6MkpTHR8VNsBxYAAWHut2Geadd9jSwuBV8xRoAnwWsdvktH#z6MkpTHR8VNsBxYAAWHut2Geadd9jSwuBV8xRoAnwWsdvktH",
           "type": "NaturalPerson",
           "familyName": "Palk",
-          "givenName": "Chris",
+          "firstName": "Chris",
           "dateOfBirth": "1990-01-01",
           "nationality": "GB"
         }
