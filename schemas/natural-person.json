@@ -124,39 +124,38 @@
                 "type": "string",
                 "format": "uri"
               },
-              "familyName": {
-                "description": "Defines current family name(s) of the credential subject.",
+              "givenName": {
+                "description": "Defines current first name(s) of the credential subject.",
                 "type": "string"
               },
-              "firstName": {
-                "description": "Defines current first name(s) of the credential subject.",
+              "additionalName": {
+                "description": "An additional name of the credential subject, can be used for a middle name.",
+                "type": "string"
+              },
+              "familyName": {
+                "description": "Defines current family name(s) of the credential subject.",
                 "type": "string"
               },
               "familyNameAtBirth": {
                 "description": "Defines family name(s) of the credential subject at birth.",
                 "type": "string"
               },
-              "firstNameAtBirth": {
+              "givenNameAtBirth": {
                 "description": "Defines first name(s) of the credential subject at birth.",
                 "type": "string"
               },
-              "dateOfBirth": {
+              "birthDate": {
                 "description": "Defines date of birth of the credential subject.",
                 "type": "string",
                 "format": "date"
               },
-              "yearOfBirth": {
-                "description": "Defines the year of birth of the credential subject.",
-                "type": "string",
-                "format": "date"
+              "birthPlace": {
+                "description": "Defines the place where the credential subject is born.",
+                "$ref": "#/$defs/address"
               },
               "personalIdentifier": {
                 "description": "Defines the unique national identifier of the credential subject.",
                 "type": "string"
-              },
-              "placeOfBirth": {
-                "description": "Defines the place where the credential subject is born.",
-                "$ref": "#/$defs/address"
               },
               "currentAddress": {
                 "description": "Defines the current address of the credential subject.",
@@ -185,10 +184,9 @@
             },
             "required": [
               "id",
+              "givenName",
               "familyName",
-              "firstName",
-              "dateOfBirth",
-              "nationality"
+              "birthDate"
             ]
           }
         }

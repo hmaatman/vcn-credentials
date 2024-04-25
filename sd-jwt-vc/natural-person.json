@@ -32,8 +32,8 @@
           "id": "did:key:z6MkpTHR8VNsBxYAAWHut2Geadd9jSwuBV8xRoAnwWsdvktH#z6MkpTHR8VNsBxYAAWHut2Geadd9jSwuBV8xRoAnwWsdvktH",
           "type": "NaturalPerson",
           "familyName": "Palk",
-          "firstName": "Chris",
-          "dateOfBirth": "1990-01-01",
+          "givenName": "Chris",
+          "birthDate": "1990-01-01",
           "nationality": "GB"
         }
       }

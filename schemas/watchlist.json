@@ -128,30 +128,29 @@
                 "type": "string",
                 "format": "uri"
               },
+              "givenName": {
+                "description": "Defines current first name(s) of the credential subject.",
+                "type": "string"
+              },
+              "additionalName": {
+                "description": "An additional name of the credential subject, can be used for a middle name.",
+                "type": "string"
+              },
               "familyName": {
                 "description": "Defines current family name(s) of the credential subject.",
                 "type": "string"
               },
-              "firstName": {
-                "description": "Defines current first name(s) of the credential subject.",
-                "type": "string"
-              },
-              "dateOfBirth": {
+              "birthDate": {
                 "description": "Defines date of birth of the credential subject.",
                 "type": "string",
                 "format": "date"
-              },
-              "currentAddress": {
-                "description": "Defines the current address of the credential subject.",
-                "$ref": "#/$defs/address"
               }
             },
             "required": [
               "id",
+              "givenName",
               "familyName",
-              "firstName",
-              "dateOfBirth",
-              "currentAddress"
+              "birthDate"
             ]
           }
         }
