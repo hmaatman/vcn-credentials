@@ -37,7 +37,7 @@
           "nationality": "GB"
         },
         "watchList": {
-            "isOnGlobalWatchListOrSanctioned": "true"
+            "isOnGlobalWatchListOrSanctioned": true
         }
       }
     },

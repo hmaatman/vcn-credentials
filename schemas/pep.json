@@ -465,7 +465,7 @@
           "type": {
             "description": "Defines credential schema type",
             "type": "string",
-            "enum": ["JsonSchema", "VerifiableCredential", "politicallyExposedPerson"]
+            "enum": ["JsonSchema", "VerifiableCredential", "PoliticallyExposedPerson"]
           }
         },
         "required": ["id", "type"]

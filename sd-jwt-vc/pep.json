@@ -37,7 +37,7 @@
           "nationality": "GB"
         },
         "politicallyExposedPerson": {
-            "isPoliticallyExposed": "true"
+            "isPoliticallyExposed": true
         }
       }
     },

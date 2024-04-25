@@ -465,7 +465,7 @@
           "type": {
             "description": "Defines credential schema type",
             "type": "string",
-            "enum": ["JsonSchema", "VerifiableCredential", "adverseMedia"]
+            "enum": ["JsonSchema", "VerifiableCredential", "AdverseMedia"]
           }
         },
         "required": ["id", "type"]

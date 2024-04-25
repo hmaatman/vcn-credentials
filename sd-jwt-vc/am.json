@@ -37,7 +37,7 @@
           "nationality": "GB"
         },
         "adverseMedia": {
-            "hasAdverseMedia": "false"
+            "hasAdverseMedia": false
         }
       }
     },

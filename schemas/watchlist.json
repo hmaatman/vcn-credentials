@@ -465,7 +465,7 @@
           "type": {
             "description": "Defines credential schema type",
             "type": "string",
-            "enum": ["JsonSchema", "VerifiableCredential", "watchList"]
+            "enum": ["JsonSchema", "VerifiableCredential", "WatchList"]
           }
         },
         "required": ["id", "type"]
