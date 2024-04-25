@@ -186,7 +186,8 @@
               "id",
               "givenName",
               "familyName",
-              "birthDate"
+              "birthDate",
+              "nationality"
             ]
           }
         }

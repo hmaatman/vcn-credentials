@@ -99,10 +99,10 @@
             }
           }
         ]
-      }
-    },
-    "politicallyExposedPerson": {
+      },
+      "politicallyExposedPerson": {
         "$ref": "#/$defs/politicallyExposedPerson"
+      }
     },
     "required": [
       "@context",
@@ -144,8 +144,23 @@
                 "description": "Defines date of birth of the credential subject.",
                 "type": "string",
                 "format": "date"
+              },
+              "nationality": {
+                "description": "One or more nationalities.",
+                "oneOf": [
+                  {
+                    "$ref": "#/$defs/nationality"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/$defs/nationality"
+                    },
+                    "minItems": 1
+                  }
+                ]
               }
-            },
+            },            
             "required": [
               "id",
               "givenName",

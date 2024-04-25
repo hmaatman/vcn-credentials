@@ -1,0 +1,46 @@
+{
+    "header": {
+      "alg": "RS256",
+      "typ": "JWT",
+      "kid": "https://vcn.certn.co/issuers/issuername1/keys/1"
+    },
+    "payload": {
+      "iss": "https://vcn.certn.co/issuers/issuername1",
+      "sub": "did:key:z6MkpTHR8VNsBxYAAWHut2Geadd9jSwuBV8xRoAnwWsdvktH#z6MkpTHR8VNsBxYAAWHut2Geadd9jSwuBV8xRoAnwWsdvktH",
+      "aud": "did:web:vcn.certn.co:verifiers:relyingpartyname1",
+      "exp": 1661990400,
+      "nbf": 1659369600,
+      "iat": 1659369600,
+      "jti": "urn:uuid:unique-token-id",
+      "vc": {
+        "@context": [
+          "https://www.w3.org/ns/credentials/v2"
+        ],
+        "id": "https://vcn.certn.co/issuances/123e78ghg-e89b-12d3-a456-426614174000",
+        "type": ["JsonSchema", "VerifiableCredential", "NaturalPerson"],
+        "credentialSchema": [{
+          "id": "https://vcn.certn.co/credentials/NaturalPerson",
+          "type": "NaturalPerson"
+          }
+        ],
+        "issuer": {
+          "id": "did:web:vcn.certn.co:issuers:issuername1#key-1",
+          "issuingCountry": "GB"
+        },
+        "validFrom": "2024-04-22T17:27:17Z",
+        "credentialSubject": {
+          "id": "did:key:z6MkpTHR8VNsBxYAAWHut2Geadd9jSwuBV8xRoAnwWsdvktH#z6MkpTHR8VNsBxYAAWHut2Geadd9jSwuBV8xRoAnwWsdvktH",
+          "type": "NaturalPerson",
+          "familyName": "Palk",
+          "givenName": "Chris",
+          "birthDate": "1990-01-01",
+          "nationality": "GB"
+        },
+        "politicallyExposedPerson": {
+            "isPoliticallyExposed": "true"
+        }
+      }
+    },
+    "signature": "eyJhbGciOiJSUzI1NiIsImI2NCI6ZmFsc2U..truncated..sample..1J0O0u4W1f2GoRendFzA7jk9Yts2vrq9JGo6VPLHUVuoYBzZy2g"
+  }
+  
