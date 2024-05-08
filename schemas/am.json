@@ -1,7 +1,7 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "title": "Credit History as W3C VC",
-    "description": "The schema defines a structure for W3C VC Credit History",
+    "description": "The schema defines a structure for W3C VC Adverse Media",
     "type": "object",
     "properties": {
       "@context": {
@@ -34,9 +34,9 @@
         }
       },
       "issuer": {
-        "description": "DID of the credential issuer",
         "oneOf": [
           {
+            "description": "DID of the credential issuer",
             "type": "string",
             "format": "uri"
           },
@@ -48,6 +48,10 @@
                 "description": "DID of the credential issuer",
                 "type": "string",
                 "format": "uri"
+              },
+              "issuerName": {
+                "description": "Name of the credential issuer, can be used as label on a VC card",
+                "type": "string"
               },
               "issuingCountry": {
                 "description": "issuing_country. ISO 2-letter code",

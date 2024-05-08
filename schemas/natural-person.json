@@ -34,9 +34,9 @@
         }
       },
       "issuer": {
-        "description": "DID of the credential issuer",
         "oneOf": [
           {
+            "description": "DID of the credential issuer",
             "type": "string",
             "format": "uri"
           },
@@ -48,6 +48,10 @@
                 "description": "DID of the credential issuer",
                 "type": "string",
                 "format": "uri"
+              },
+              "issuerName": {
+                "description": "Name of the credential issuer, can be used as label on a VC card",
+                "type": "string"
               },
               "issuingCountry": {
                 "description": "issuing_country. ISO 2-letter code",

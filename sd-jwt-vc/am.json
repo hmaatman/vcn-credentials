@@ -25,6 +25,7 @@
         ],
         "issuer": {
           "id": "did:web:vcn.certn.co:issuers:issuername1#key-1",
+          "issuerName": "issuername1",
           "issuingCountry": "GB"
         },
         "validFrom": "2024-04-22T17:27:17Z",
