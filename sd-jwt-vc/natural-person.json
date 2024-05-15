@@ -2,12 +2,12 @@
     "header": {
       "alg": "RS256",
       "typ": "JWT",
-      "kid": "https://vcn.certn.co/issuers/issuername1/keys/1"
+      "kid": "https://api.ca.certn.co/vcn/issuers/issuername1/keys/1"
     },
     "payload": {
-      "iss": "https://vcn.certn.co/issuers/issuername1",
+      "iss": "https://api.ca.certn.co/vcn/issuers/issuername1",
       "sub": "did:key:z6MkpTHR8VNsBxYAAWHut2Geadd9jSwuBV8xRoAnwWsdvktH#z6MkpTHR8VNsBxYAAWHut2Geadd9jSwuBV8xRoAnwWsdvktH",
-      "aud": "did:web:vcn.certn.co:verifiers:relyingpartyname1",
+      "aud": "did:web:api.ca.certn.co:vcn:verifiers:relyingpartyname1",
       "exp": 1661990400,
       "nbf": 1659369600,
       "iat": 1659369600,
@@ -16,15 +16,15 @@
         "@context": [
           "https://www.w3.org/ns/credentials/v2"
         ],
-        "id": "https://vcn.certn.co/issuances/123e78ghg-e89b-12d3-a456-426614174000",
+        "id": "https://api.ca.certn.co/vcn/issuances/123e78ghg-e89b-12d3-a456-426614174000",
         "type": ["JsonSchema", "VerifiableCredential", "NaturalPerson"],
         "credentialSchema": [{
-          "id": "https://vcn.certn.co/credentials/NaturalPerson",
+          "id": "https://api.ca.certn.co/vcn/credentials/NaturalPerson",
           "type": "NaturalPerson"
           }
         ],
         "issuer": {
-          "id": "did:web:vcn.certn.co:issuers:issuername1#key-1",
+          "id": "did:web:api.ca.certn.co:vcn:issuers:issuername1#key-1",
           "issuingCountry": "GB"
         },
         "validFrom": "2024-04-22T17:27:17Z",
