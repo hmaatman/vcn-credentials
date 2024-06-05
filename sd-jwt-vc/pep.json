@@ -34,10 +34,8 @@
           "familyName": "Palk",
           "givenName": "Chris",
           "birthDate": "1990-01-01",
-          "nationality": "GB"
-        },
-        "politicallyExposedPerson": {
-            "isPoliticallyExposed": true
+          "nationality": "GB",
+          "isPoliticallyExposed": true
         }
       }
     },

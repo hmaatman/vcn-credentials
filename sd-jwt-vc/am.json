@@ -31,14 +31,11 @@
         "validFrom": "2024-04-22T17:27:17Z",
         "credentialSubject": {
           "id": "did:key:z6MkpTHR8VNsBxYAAWHut2Geadd9jSwuBV8xRoAnwWsdvktH#z6MkpTHR8VNsBxYAAWHut2Geadd9jSwuBV8xRoAnwWsdvktH",
-          "type": "NaturalPerson",
           "familyName": "Palk",
           "givenName": "Chris",
           "birthDate": "1990-01-01",
-          "nationality": "GB"
-        },
-        "adverseMedia": {
-            "hasAdverseMedia": false
+          "nationality": "GB",
+          "hasAdverseMedia": false
         }
       }
     },

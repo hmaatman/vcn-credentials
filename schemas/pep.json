@@ -72,7 +72,59 @@
         "format": "date-time"
       },
       "credentialSubject": {
-        "$ref": "#/$defs/credentialSubjectPID"
+        "description": "Defines additional information about the subject that is described by the Verifiable ID",
+        "type": "object",
+        "properties": {
+          "id": {
+            "_comment": "We use did:jwk or did:key for the credentialSubject but the format is still a uri as it conforms to the did specification.",
+            "description": "Defines the DID of the subject that is described by the Verifiable Attestation.",
+            "type": "string",
+            "format": "uri"
+          },
+          "givenName": {
+            "description": "Defines current first name(s) of the credential subject.",
+            "type": "string"
+          },
+          "additionalName": {
+            "description": "An additional name of the credential subject, can be used for a middle name.",
+            "type": "string"
+          },
+          "familyName": {
+            "description": "Defines current family name(s) of the credential subject.",
+            "type": "string"
+          },
+          "birthDate": {
+            "description": "Defines date of birth of the credential subject.",
+            "type": "string",
+            "format": "date"
+          },
+          "nationality": {
+            "description": "One or more nationalities.",
+            "oneOf": [
+              {
+                "$ref": "#/$defs/nationality"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/nationality"
+                },
+                "minItems": 1
+              }
+            ]
+          },
+          "isPoliticallyExposed": {
+            "description": "True if subject is politically exposed, false otherwise.",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "givenName",
+          "familyName",
+          "birthDate",
+          "isPoliticallyExposed"
+        ]
       },
       "credentialStatus": {
         "description": "Defines suspension and/or revocation details for the issued credential. Further redefined by the type extension",
@@ -104,8 +156,20 @@
           }
         ]
       },
-      "politicallyExposedPerson": {
-        "$ref": "#/$defs/politicallyExposedPerson"
+      "cardInfo": {
+        "description": "Defines additional information to help with the visualisation of the credential.",
+        "type": "object",
+        "properties": {
+          "icon": {
+            "type": "string"
+          },
+          "colour": {
+            "type": "string"
+          },
+          "texture": {
+            "type": "string"
+          }
+        }
       }
     },
     "required": [
@@ -115,8 +179,7 @@
       "issuer",
       "validFrom",
       "credentialSubject",
-      "credentialSchema",
-      "politicallyExposedPerson"
+      "credentialSchema"
     ],
     "$defs": {
       "credentialSubjectPID": {
@@ -473,17 +536,6 @@
           }
         },
         "required": ["id", "type"]
-      },
-      "politicallyExposedPerson": {
-        "description": "Whether or not the subject is politically exposed.",
-        "type": "object",
-        "properties": {
-            "isPoliticallyExposed": {
-                "description": "True if subject is politically exposed, false otherwise.",
-                "type": "boolean"
-            }
-        },
-        "required": ["isPoliticallyExposed"]
       }
     }
   }

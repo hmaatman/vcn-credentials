@@ -73,7 +73,107 @@
         "format": "date-time"
       },
       "credentialSubject": {
-        "$ref": "#/$defs/credentialSubjectPID"
+        "description": "Defines additional information about the subject that is described by the Verifiable ID",
+        "type": "object",
+        "properties": {
+          "id": {
+            "_comment": "We use did:jwk or did:key for the credentialSubject but the format is still a uri as it conforms to the did specification.",
+            "description": "Defines the DID of the subject that is described by the Verifiable Attestation.",
+            "type": "string",
+            "format": "uri"
+          },
+          "givenName": {
+            "description": "Defines current first name(s) of the credential subject.",
+            "type": "string"
+          },
+          "additionalName": {
+            "description": "An additional name of the credential subject, can be used for a middle name.",
+            "type": "string"
+          },
+          "familyName": {
+            "description": "Defines current family name(s) of the credential subject.",
+            "type": "string"
+          },
+          "birthDate": {
+            "description": "Defines date of birth of the credential subject.",
+            "type": "string",
+            "format": "date"
+          },
+          "nationality": {
+            "description": "One or more nationalities.",
+            "oneOf": [
+              {
+                "$ref": "#/$defs/nationality"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/nationality"
+                },
+                "minItems": 1
+              }
+            ]
+          },
+          "creditHistory": {
+            "description": "Contains information about the credit history of the subject",
+            "type": "object",
+            "properties": {
+              "id": {
+                "description": "The unique id provided by the data source of the credit history, equifax, transunion",
+                "type": "string",
+                "format": "uri"
+              },
+              "countryOfCheck": {
+                "description": "Specifies win which country the check was performed. MUST be two-letter ISO 3166-1 alpha-2 country code.",
+                "type": "string"
+              },
+              "returnedFullName": {
+                "description": "",
+                "type": "string"
+              },
+              "returnedCurrentAddress": {
+                "description": "",
+                "type": "string"
+              },
+              "undeclaredAddress": [{
+                "description": "",
+                "type": "string"
+              }],
+              "bankruptcy": {
+                "description": "",
+                "type": "boolean"
+              },
+              "countyCourtJudgements": {
+                "description": "",
+                "type": "boolean"
+              },
+              "individualVoluntaryArrangement": {
+                "description": "",
+                "type": "boolean"
+              },
+              "debtReliefOrder": {
+                "description": "",
+                "type": "boolean"
+              },
+              "noticesOfCorrections": {
+                "description": "",
+                "type": "boolean"
+              },
+              "adverseInformation": {
+                "description": "",
+                "type": "boolean"
+              }
+            },
+            "required": ["id", "countryOfCheck", "returnedFullName", "returnedCurrentAddress"]
+          }
+        },
+        "required": [
+          "id",
+          "givenName",
+          "familyName",
+          "birthDate",
+          "creditHistory"
+        ]
       },
       "credentialStatus": {
         "description": "Defines suspension and/or revocation details for the issued credential. Further redefined by the type extension",
@@ -105,8 +205,20 @@
           }
         ]
       },
-      "creditHistory": {
-        "$ref": "#/$defs/creditHistory"
+      "cardInfo": {
+        "description": "Defines additional information to help with the visualisation of the credential.",
+        "type": "object",
+        "properties": {
+          "icon": {
+            "type": "string"
+          },
+          "colour": {
+            "type": "string"
+          },
+          "texture": {
+            "type": "string"
+          }
+        }
       }
     },
     "required": [
@@ -116,66 +228,10 @@
       "issuer",
       "validFrom",
       "credentialSubject",
-      "credentialSchema",
-      "creditHistory"
+      "credentialSchema"
     ],
     "$defs": {
-      "credentialSubjectPID": {
-        "type": "object",
-        "properties": {
-          "credentialSubject": {
-            "description": "Defines additional information about the subject that is described by the Verifiable ID",
-            "type": "object",
-            "properties": {
-              "id": {
-                "_comment": "We use did:jwk or did:key for the credentialSubject but the format is still a uri as it conforms to the did specification.",
-                "description": "Defines the DID of the subject that is described by the Verifiable Attestation.",
-                "type": "string",
-                "format": "uri"
-              },
-              "givenName": {
-                "description": "Defines current first name(s) of the credential subject.",
-                "type": "string"
-              },
-              "additionalName": {
-                "description": "An additional name of the credential subject, can be used for a middle name.",
-                "type": "string"
-              },
-              "familyName": {
-                "description": "Defines current family name(s) of the credential subject.",
-                "type": "string"
-              },
-              "birthDate": {
-                "description": "Defines date of birth of the credential subject.",
-                "type": "string",
-                "format": "date"
-              },
-              "nationality": {
-                "description": "One or more nationalities.",
-                "oneOf": [
-                  {
-                    "$ref": "#/$defs/nationality"
-                  },
-                  {
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/$defs/nationality"
-                    },
-                    "minItems": 1
-                  }
-                ]
-              }
-            },
-            "required": [
-              "id",
-              "givenName",
-              "familyName",
-              "birthDate"
-            ]
-          }
-        }
-      },
-      "nationality": {
+        "nationality": {
         "type": "string",
         "enum": [
           "AD",
@@ -474,58 +530,6 @@
           }
         },
         "required": ["id", "type"]
-      },
-      "creditHistory": {
-        "description": "Contains information about the credit history of the subject",
-        "type": "object",
-        "properties": {
-            "id": {
-                "description": "The unique id provided by the data source of the credit history, equifax, transunion",
-                "type": "string",
-                "format": "uri"
-            },
-            "countryOfCheck": {
-                "description": "Specifies win which country the check was performed. MUST be two-letter ISO 3166-1 alpha-2 country code.",
-                "type": "string"
-            },
-            "returnedFullName": {
-                "description": "",
-                "type": "string"
-            },
-            "returnedCurrentAddress": {
-                "description": "",
-                "type": "string"
-            },
-            "undeclaredAddress": [{
-                "description": "",
-                "type": "string"
-            }],
-            "bankruptcy": {
-                "description": "",
-                "type": "boolean"
-            },
-            "countyCourtJudgements": {
-                "description": "",
-                "type": "boolean"
-            },
-            "individualVoluntaryArrangement": {
-                "description": "",
-                "type": "boolean"
-            },
-            "debtReliefOrder": {
-                "description": "",
-                "type": "boolean"
-            },
-            "noticesOfCorrections": {
-                "description": "",
-                "type": "boolean"
-            },
-            "adverseInformation": {
-                "description": "",
-                "type": "boolean"
-            }
-        },
-        "required": ["id", "countryOfCheck", "returnedFullName", "returnedCurrentAddress"]
       }
     }
   }

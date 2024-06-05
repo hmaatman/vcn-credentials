@@ -72,7 +72,59 @@
         "format": "date-time"
       },
       "credentialSubject": {
-        "$ref": "#/$defs/credentialSubjectPID"
+        "description": "Defines additional information about the subject that is described by the Verifiable ID",
+        "type": "object",
+        "properties": {
+          "id": {
+            "_comment": "We use did:jwk or did:key for the credentialSubject but the format is still a uri as it conforms to the did specification.",
+            "description": "Defines the DID of the subject that is described by the Verifiable Attestation.",
+            "type": "string",
+            "format": "uri"
+          },
+          "givenName": {
+            "description": "Defines current first name(s) of the credential subject.",
+            "type": "string"
+          },
+          "additionalName": {
+            "description": "An additional name of the credential subject, can be used for a middle name.",
+            "type": "string"
+          },
+          "familyName": {
+            "description": "Defines current family name(s) of the credential subject.",
+            "type": "string"
+          },
+          "birthDate": {
+            "description": "Defines date of birth of the credential subject.",
+            "type": "string",
+            "format": "date"
+          },
+          "nationality": {
+            "description": "One or more nationalities.",
+            "oneOf": [
+              {
+                "$ref": "#/$defs/nationality"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/nationality"
+                },
+                "minItems": 1
+              }
+            ]
+          },
+          "isOnGlobalWatchListOrSanctioned": {
+            "description": "True if subject has adverse media, false otherwise.",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "givenName",
+          "familyName",
+          "birthDate",
+          "isOnGlobalWatchListOrSanctioned"
+        ]
       },
       "credentialStatus": {
         "description": "Defines suspension and/or revocation details for the issued credential. Further redefined by the type extension",
@@ -104,8 +156,20 @@
           }
         ]
       },
-      "watchList": {
-        "$ref": "#/$defs/watchList"
+      "cardInfo": {
+        "description": "Defines additional information to help with the visualisation of the credential.",
+        "type": "object",
+        "properties": {
+          "icon": {
+            "type": "string"
+          },
+          "colour": {
+            "type": "string"
+          },
+          "texture": {
+            "type": "string"
+          }
+        }
       }
     },
     "required": [
@@ -115,65 +179,9 @@
       "issuer",
       "validFrom",
       "credentialSubject",
-      "credentialSchema",
-      "watchList"
+      "credentialSchema"
     ],
     "$defs": {
-      "credentialSubjectPID": {
-        "type": "object",
-        "properties": {
-          "credentialSubject": {
-            "description": "Defines additional information about the subject that is described by the Verifiable ID",
-            "type": "object",
-            "properties": {
-              "id": {
-                "_comment": "We use did:jwk or did:key for the credentialSubject but the format is still a uri as it conforms to the did specification.",
-                "description": "Defines the DID of the subject that is described by the Verifiable Attestation.",
-                "type": "string",
-                "format": "uri"
-              },
-              "givenName": {
-                "description": "Defines current first name(s) of the credential subject.",
-                "type": "string"
-              },
-              "additionalName": {
-                "description": "An additional name of the credential subject, can be used for a middle name.",
-                "type": "string"
-              },
-              "familyName": {
-                "description": "Defines current family name(s) of the credential subject.",
-                "type": "string"
-              },
-              "birthDate": {
-                "description": "Defines date of birth of the credential subject.",
-                "type": "string",
-                "format": "date"
-              },
-              "nationality": {
-                "description": "One or more nationalities.",
-                "oneOf": [
-                  {
-                    "$ref": "#/$defs/nationality"
-                  },
-                  {
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/$defs/nationality"
-                    },
-                    "minItems": 1
-                  }
-                ]
-              }
-            },
-            "required": [
-              "id",
-              "givenName",
-              "familyName",
-              "birthDate"
-            ]
-          }
-        }
-      },
       "nationality": {
         "type": "string",
         "enum": [
@@ -473,17 +481,6 @@
           }
         },
         "required": ["id", "type"]
-      },
-      "watchList": {
-        "description": "Whether or not the subject is on a global watchList or sanctioned.",
-        "type": "object",
-        "properties": {
-            "isOnGlobalWatchListOrSanctioned": {
-                "description": "True if subject has adverse media, false otherwise.",
-                "type": "boolean"
-            }
-        },
-        "required": ["isOnGlobalWatchListOrSanctioned"]
       }
     }
   }

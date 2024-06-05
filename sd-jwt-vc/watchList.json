@@ -31,10 +31,8 @@
           "familyName": "Palk",
           "givenName": "Chris",
           "birthDate": "1990-01-01",
-          "nationality": "GB"
-        },
-        "watchList": {
-            "isOnGlobalWatchListOrSanctioned": true
+          "nationality": "GB",
+          "isOnGlobalWatchListOrSanctioned": true
         }
       }
     },
